@@ -16,7 +16,7 @@ class Application:
 
         # Create embeddings model, backed by sentence-transformers & transformers
         # self.embeddings = Embeddings({"path": "sentence-transformers/nli-mpnet-base-v2"})
-        # #self.embeddings = Embeddings({"path": "sentence-transformers/bert-base-nli-mean-tokens"})
+        # # self.embeddings = Embeddings({"path": "sentence-transformers/bert-base-nli-mean-tokens"})
         # filename = 'occ_clean.txt';
         # with open(filename) as file:
         #     data = file.readlines()
@@ -57,7 +57,13 @@ class Application:
         if query:
             # Get index of best section that best matches query
             #uid = self.embeddings.similarity(query, data)[0][0]
-            uid = self.embeddings.search(query, 1)[0][0]
+            result = self.embeddings.search(query, 3)
+            print(result)
+            uid = result[0][0]
+            st.write(data[uid])
+            uid = result[1][0]
+            st.write(data[uid])
+            uid = result[2][0]
             st.write(data[uid])
 
 

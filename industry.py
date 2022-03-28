@@ -43,7 +43,7 @@ class Application:
         ]
 
         filename = 'industry_clean.txt';
-        with open(filename) as file:
+        with open(filename, encoding="ISO-8859-1") as file:
             data = file.readlines()
 
         #data = st.text_area("Data", value="\n".join(data))

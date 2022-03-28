@@ -1,2 +1,2 @@
 import subprocess
-subprocess.run(["streamlit","run","embed.py"])
+subprocess.run(["streamlit","run","occ.py"])
